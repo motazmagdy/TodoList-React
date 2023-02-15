@@ -13,10 +13,7 @@ export default class TodoApp extends Component {
   }
   deleteGoal = (id) => {
     let goals = this.state.items;
-    // let goalId = goals.findIndex(goal => goal.id === id)
-    // goals.splice(goalId,1)
-    // this.setState({items:goals})
-    let newGoals = goals.filter(goal => goal.id != id)
+    let newGoals = goals.filter(goal => goal.id !== id)
     this.setState({items:newGoals})
   }
 
