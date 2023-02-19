@@ -17,12 +17,21 @@ export default class TodoApp extends Component {
     this.setState({items:newGoals})
   }
 
+  addItem = (goal) => {
+    let newGoalId = +this.state.items.length + 1
+    goal.id = newGoalId
+    let currentGoals = this.state.items
+    currentGoals.push(goal)
+    this.setState(
+      { items : currentGoals}
+  )}
+
   render(){
     return (
-      <div>
-        <h1>TodoList App</h1>
+      <div className='appContainer'>
+        <h1 className='textCenter'>TodoList App</h1>
         <ListGoals itemsList={this.state.items}  deleteGoal={this.deleteGoal}/>
-        <ListForm />
+        <ListForm addGoal={this.addItem}/>
       </div>
     )
   }

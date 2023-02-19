@@ -3,26 +3,27 @@ import './ListGoals.css'
 
 const ListGoals = (props) =>{
     const {itemsList , deleteGoal} = props 
-    const listData = itemsList.map(item =>{
+    const listLength = itemsList.length
+    const theData = listLength ? (
+    itemsList.map(item =>{
         return (
             <div key={item.id}>
-                <span>{item.name}</span>
-                <span>{item.age}</span>
-                <span>{item.goal}</span>
-                <span onClick={()=>deleteGoal(item.id)}>&times;</span>
+                <span className="name">{item.name}</span>
+                <span className="age">{item.age}</span>
+                <span className="goal">{item.goal}</span>
+                <span className="action icon" onClick={()=>deleteGoal(item.id)}><b>&times;</b></span>
             </div>
         )
-    })
+    })) : (<p>There is no Items to show</p>)
     return (
-        <div>
-            Goals List
+        <div className="listItems">
             <div>
-                <span>Name</span>
-                <span>Age</span>
-                <span>Goal</span>
-                <span>Actions</span>
+                <span className="name title">Name</span>
+                <span className="age title">Age</span>
+                <span className="goal title">Goal</span>
+                <span className="action title">Action</span>
             </div>
-            <div>{listData}</div>
+            <div>{theData}</div>
             
             </div>
         
