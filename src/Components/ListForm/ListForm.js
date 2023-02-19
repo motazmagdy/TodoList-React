@@ -13,7 +13,7 @@ export default class ListForm extends Component {
 
   submitGoal = (e) => {
     e.preventDefault();
-    if (e.target.name.value !== "") {
+    if (e.target.name.value !== "" && e.target.age.value !== "" && e.target.goal.value !== "") {
       this.props.addGoal(this.state);
       this.setState({
         name: "",
