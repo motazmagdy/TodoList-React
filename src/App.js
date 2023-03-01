@@ -7,7 +7,7 @@ export default class TodoApp extends Component {
   state = {
     items : [
       {id:1,name:'Ali',age:19,goal:'Learn Swimming'},
-      {id:2,name:'Osama',age:32,goal:'Get MasterDegree'},
+      {id:2,name:'Osama',age:32,goal:'Get Master Degree'},
       {id:3,name:'Yara',age:28,goal:'Travel to Paris'}
     ]
   }
