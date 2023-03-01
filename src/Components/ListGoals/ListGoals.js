@@ -7,7 +7,7 @@ const ListGoals = (props) =>{
     const theData = listLength ? (
     itemsList.map(item =>{
         return (
-            <div key={item.id}>
+            <div  className="listItem" key={item.id}>
                 <span className="name">{item.name}</span>
                 <span className="age">{item.age}</span>
                 <span className="goal">{item.goal}</span>
